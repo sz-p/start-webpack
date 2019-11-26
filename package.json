@@ -1,0 +1,15 @@
+{
+  "name": "startwebpack",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.7.4",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.41.2"
+  },
+  "scripts": {
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js"
+  }
+}
