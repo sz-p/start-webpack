@@ -1,7 +1,14 @@
 const paths = require('./paths');
 
 module.exports = {
-	contentBase: paths.public,
-	compress: true,
-	port: 3000
+  // app的跟目录
+  contentBase: paths.public,
+  // 开启gzip压缩
+  compress: true,
+  // 端口号
+  port: 3000,
+  // 启动webpackDevServer后直接打开网页
+  open: true,
+  // 开发热替换（不用重新start）
+  hot: true,
 };

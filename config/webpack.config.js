@@ -1,5 +1,7 @@
 // webpack 配置信息
 const paths = require('./paths');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
 	// 入口
 	entry: paths.mainjs,
@@ -17,5 +19,9 @@ module.exports = {
 				loader: require.resolve('babel-loader')
 			}
 		]
-	}
+  },
+  plugins: [new HtmlWebpackPlugin({
+    // 选择模板
+    template:paths.indexHTML
+  })]
 };
