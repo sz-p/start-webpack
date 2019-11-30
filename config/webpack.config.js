@@ -16,6 +16,8 @@ module.exports = {
     filename: 'bundle.[hash:8].js'
   },
   // loader
+  // 针对不同的文件，选择不同的loader
+  // loader本质上是一些function,对传入的资源进行处理并返回已处理的资源
   module: {
     rules: [
       {
@@ -29,8 +31,11 @@ module.exports = {
       }
     ]
   },
-  plugins: [new HtmlWebpackPlugin({
-    // 选择模板
-    template: paths.indexHTML
-  })]
+
+  plugins: [
+    // HtmlWebpackPlugin 插件 提供了将已构建的代码插入模板html文件的功能
+    new HtmlWebpackPlugin({
+      // 选择模板
+      template: paths.indexHTML
+    })]
 };
