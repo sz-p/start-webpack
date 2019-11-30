@@ -1,7 +1,7 @@
 const paths = require('./paths');
 
 module.exports = {
-  // app的跟目录
+  // app的根目录
   contentBase: paths.public,
   // 开启gzip压缩
   compress: true,

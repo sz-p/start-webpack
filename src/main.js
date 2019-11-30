@@ -1,8 +1,10 @@
 // 主入口文件
 
-import index from './pages/index';
-import about from './pages/about';
+// 引入react
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-console.log('this is mainjs');
-index();
-about();
+import App from './app';
+// 将react渲染结果插入root节点
+ReactDOM.render(<App />, document.getElementById('root'));
+
