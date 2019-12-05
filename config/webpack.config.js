@@ -2,6 +2,20 @@
 const paths = require('./paths');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const isPro = function () {
+  if (process.env.NODE_ENV === 'production') {
+    return true;
+  }
+  return false;
+}
+
+const isDev = function () {
+  if (process.env.NODE_ENV === 'production') {
+    return true;
+  }
+  return false;
+}
+
 module.exports = {
 
   // 设置开发环境和生产环境
@@ -28,7 +42,17 @@ module.exports = {
           // 指定 babelConfig 文件(未指定的话会在运行目录下搜索)
           configFile: paths.babelConfig
         }
-      }
+      },
+      {
+        test: /\.css$/,
+        use: [{
+          // 将css-loader内部样式注入到我们的HTML页面
+          loader: require.resolve('style-loader')
+        }, {
+          // 加载css文件
+          loader: require.resolve('css-loader')
+        }]
+      },
     ]
   },
 
@@ -37,5 +61,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       // 选择模板
       template: paths.indexHTML
-    })]
+    })],
+  devtool: isPro() ? '' : 'source-map',
 };

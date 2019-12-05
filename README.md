@@ -14,13 +14,21 @@
 |babel-preset-react-app|使babel可以解析jsx代码|
 |react-hot-loader|为react应用提供模块热更新服务(不用再刷新整个页面)|
 |react-router-dom|为react应用提供路由服务|
+|babel-loader|将es6的代码解析成通用代码|
+|babel-preset-react-app|将jsx代码解析成通用代码|
+|css-loader|加载css文件|
+|style-loader|将css样式注入html页面|
+|sourceMap|输出源码映射|
+|打包删除旧文件||
+|生产模式的打包流程||
+
 
 TODO
 
 |功能|备注|
 |:--:|:--:|
-|sourceMap|输出源码映射|
-|build|生产模式的打包流程|
+|构建打包目录||
+|css的sorcemap||
 
 ## webpack 主要工作流程
 webpack的主要工作是将`模块`打包，这些模块可能包括`js代码模块`，`css模块`,`一些其他静态资源`等。无论是在`pro`模式下还是在`dev`模式下本质上都是将`模块`打包成资源，并依赖一些插件依照一些规范对这些资源进行一定的工程化整合，解决一些前端开发、部署的公共性问题。使其成为一个开发或者构建的封闭实体。
