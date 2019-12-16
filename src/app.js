@@ -1,6 +1,6 @@
 import React from 'react';
-import IndexPage from './pages/index';
-import AboutPage from './pages/about';
+import IndexPage from './pages/index/index';
+import AboutPage from './pages/about/about';
 
 import { hot } from 'react-hot-loader';
 import { BrowserRouter, Route } from 'react-router-dom';

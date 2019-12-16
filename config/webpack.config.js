@@ -44,6 +44,11 @@ module.exports = {
         }
       },
       {
+        test: /\.(ts|tsx)$/,
+        include: paths.src,
+        loader: "ts-loader"
+      },
+      {
         test: /\.css$/,
         use: [{
           // 将css-loader内部样式注入到我们的HTML页面
@@ -55,7 +60,9 @@ module.exports = {
       },
     ]
   },
-
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js', '.json']
+  },
   plugins: [
     // HtmlWebpackPlugin 插件 提供了将已构建的代码插入模板html文件的功能
     new HtmlWebpackPlugin({
