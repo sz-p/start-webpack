@@ -44,7 +44,7 @@ function removeOldfiles() {
       if (fs.lstatSync(path + '/' + item).isDirectory() === true) {
         directoryList.push(path + item + '/');
       } else {
-        fs.unlink(path + '/' + item)
+        fs.unlink(path + '/' + item,() => {})
       }
     })
   }
